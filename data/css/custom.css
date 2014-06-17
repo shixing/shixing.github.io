@@ -1,0 +1,26 @@
+.section {
+    font-size:medium;
+}
+
+.subsection{
+    margin: 3px 0 3px 0;
+}
+
+.paper-title, .paper-author, .paper-conference, .paper-link, .university, .degree{
+    display:block;
+    clear:both;
+}
+
+.block-clear{
+    display:block;
+    clear:both;
+
+}
+
+.paper-link{
+    font-family:sans-serif;
+}
+
+.paper-title{
+    font-weight:400;
+}

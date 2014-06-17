@@ -136,7 +136,7 @@ a:visited { color: #205caa; }
 /* ----------------------------------------------------------*/
 
 .page-content {
-  padding: 30px 0;
+  padding: 50px 0;
   background-color: #fff;
 }
 
@@ -148,16 +148,19 @@ a:visited { color: #205caa; }
 
 .posts { list-style-type: none; }
 
-.posts li { margin-bottom: 30px; }
+.posts li { margin-bottom: 0; }
 
 .posts .post-link {
-  font-size: 24px;
-  letter-spacing: -1px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding-left:20px;
   line-height: 1;
+  text-decoration:none;
 }
 
 .posts .post-date {
-  display: block;
+  
+  display: inline;
   font-size: 15px;
   color: #818181;
 }
@@ -170,7 +173,6 @@ a:visited { color: #205caa; }
 
 .post-header h1 {
   font-size: 42px;
-  letter-spacing: -1.75px;
   line-height: 1;
   font-weight: 300;
 }
