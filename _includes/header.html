@@ -19,6 +19,12 @@
 	    {% endif %}
           </ul>
           <ul class="nav navbar-nav navbar-right">
+	    {% if page.url == '/dashboard.html'%}
+	    <li class="active"><a href="{{ '/dashboard/' | prepend: site.baseurl }}"><span class="glyphicon glyphicon-dashboard"></span>&nbsp; Dashboard</a></li>
+	    {% else %}
+	    <li><a href="{{ '/dashboard/' | prepend: site.baseurl }}"><span class="glyphicon glyphicon-dashboard"></span>&nbsp; Dashboard</a></li>
+	    {% endif %}
+
 	    {% if page.url == '/archives/' %}
             <li class="active"><a href="{{ '/archives/' | prepend: site.baseurl }}"><span class="glyphicon glyphicon-tasks"></span>&nbsp; Archives</a></li>
 	    {% else %}
