@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: dashboard
 title: Dashboard
 ---
 
 <style>
 
-body {
+div #calender {
   font: 10px sans-serif;
   shape-rendering: crispEdges;
 }
@@ -59,6 +59,7 @@ var percent = d3.format(".1%"),
 //    .range(d3.range().map(function(d) { return "q" + d + "-11"; }));
 
 var color = function(d){
+   d = parseInt(d)
    a = 5;
    if (d>=4){ d = 4;}
    a = a + d
