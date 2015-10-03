@@ -33,12 +33,49 @@ div #calender {
 .RdYlGn .q9-11{fill:rgb(26,152,80)}
 .RdYlGn .q10-11{fill:rgb(0,104,55)}
 
+.box
+{
+   margin: 20 auto;
+   max-width: 200px;
+   padding: 15px 0;
+   border: 1px solid #ddd;
+}
+
+.line
+{
+   display:block;
+   text-align:center;
+   font-size: 11px;
+   color: #767676;
+   line-height: 1.4em;
+   font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.large-line
+{
+   display:block;
+   text-align:center;
+   font-weight: 300;
+   line-height: 1.3em;
+   font-size: 24px;
+   color: #333;
+   font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+
 </style>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 <div class="home">
 <div id = "calender" >
+</div>
+<div id = "status">
+<div class="box">
+  <span class="line">7 days running average</span>
+  <span id = "average" class="large-line">13</span>
+  <span  class="line"><span id = "start_date">2015-12-12</span> to <span id = "end_date">2015-12-12</span></span>
+</div>
 </div>
 </div>
 
@@ -118,6 +155,27 @@ d3.csv(url, function(error, csv) {
       .attr("class", function(d) { return "day " + color(data[d]); })
     .select("title")
       .text(function(d) { return d + ": " + data[d]; });
+  
+  // for running average
+  var sum = 0
+  start_date = new Date()
+  start_date.setDate(start_date.getDate() - 1)
+  end_date = new Date()
+  end_date.setDate(end_date.getDate() - 8)
+  
+  for (i = 1; i<=8; i++){
+     d = new Date()
+     d.setDate(d.getDate() - i)
+     s = format(d)
+     if (s in data) {
+	  sum += parseInt(data[s])
+     }
+   }
+  
+   d3.select('#start_date').html(format(end_date))
+   d3.select('#end_date').html(format(start_date))
+   d3.select('#average').html(sum)
+
 });
 
 function monthPath(t0) {
