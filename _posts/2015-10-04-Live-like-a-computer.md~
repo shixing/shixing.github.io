@@ -1,0 +1,102 @@
+---
+layout: post
+title:  "Live like a computer"
+date:   2015-10-04 12:00:00
+categories: insight
+---
+
+* TOC
+{:toc}
+
+## Preface
+Computer Science is not a science for computer, but the science for everything via computer. 
+
+Computer science solve real-word problems by designing algorithms. In the other hand, computer learners can also gain a much deeper insight directly from those algorithms when facing real-word problems.  
+
+So, this article is about those insights from algorithms, concepts and everything related with Computer Science. 
+
+## Context Switch in CPU and in life
+
+Conclusion:
+
+1. __Focus on One task for a long time and finish it.__
+2. __Less Switch, Fast Switch__
+
+---
+
+When you run multiple applications simultaneously on a computer, the CPU actually split a second into multiple time slices, and executing only one application's code in a time slice. When CPU finishes this time slice, if it decides to execute another application's code in the next time splice, CPU will have to save current application's state in the memory and load next application's state into CPU. This is called context switch (A much detailed explanation at [here](http://www.linfo.org/context_switch.html)). 
+
+The context switch consumes time and can affect the total CPU efficiency: if the time to switch context equals the time to execute application's code, the CPU production ratio is about 50%. 
+
+
+
+When people are doing several things at the same time, they usually apply the same strategy: doing one thing at one time slot. If they decide to do other task next time slot. They have to "reloading" some context about the other task into their memory. 
+
+An analogy between CPU and human brain
+
+|--|CPU|Human brain|
+|-- | -- | --|
+|Context|registers and program pointer|What have done ? What's the problem? ...|
+|Where to store the context|RAM|Brain or a note|
+
+
+This reloading can cost a lot of time due to:
+
+1. They forget what they have done last time, and need a long time to remember that. 
+2. They stopped the task at a point where the situation is so complex (a big context).
+
+To achieve a higher efficiency, try to decrease your context switch time by:
+
+|Goal | How-To|
+| -- | 
+| Decrease the number of times of context switch | Doing one task in a relatively big time slot |
+| |Don't look at your phone or any SNS during work |
+|Increase the speed of context switching|Write down your current "context" clearly when you decide to switch|
+||Finish the task then switch, make your "context" to be empty.|
+
+
+## Are you a compiler PhD, a interpreter PhD or a Just-In-Time PhD ? 
+
+Conclusion:
+
+__Compiler__ --- _start research_ --> __Interpreter__ -- _find a topic_ --> __Just-In-Time__
+
+---
+
+Some analogies between a program and a PhD student
+|Program| PhD student |
+| -- |
+|Source Code| Book, Other's paper |
+|Compile|Learning from book or paper |
+|Execution| Doing research |
+
+| type |Program |
+| ------------ |
+| Compiler |Translate code into native instructions beforehand.  | | 
+|          |Compile slow, execute fast |
+| Interpreter |Translate code into lower level code when executing|
+|| No compiling process, execute slow
+| Just-In-Time |Translate repeat part of code into native code during execution |
+||No compile time, execute fast| 
+
+| type | PhD |
+| -- |
+| Compiler | Learn every needed skills/courses before research |
+||__OR__ Conduct research from the first day, learn whatever needed __in detail__ during research|
+| | Long preparing time, fast research|
+| Interpreter | Conduct research from the first day, __roughly__ learn whatever needed during research.|
+| |Almost no preparing time, but slow research pace. |
+| Just-In-Time | Conduct research from the first day, only learn those repeated required knowledge in detail, and the rest roughly.|
+||Almost no preparing time, increasing faster research pace. | 
+
+Being a compiler student is wasting time, you don't really know what will be used in the future. (I think I was a compiler when I was in the last year of high school, just learnt the same thing too much.) 
+
+Being an interpreter student makes you feel hard: you have too many new things to learn, and each time you can not truly master them, which means you are going to learn them again next time. You don't feel safe. 
+
+Being a Just-In-Time student is a better option. You learn everything at first. And you decide to stop a little bit to truly understand some frequent knowledge. You feel safe gradually. However, your research path should make some knowledge frequent -- you should have a topic. 
+
+To sum up, as a PhD student, you have the right to become a compiler at first, but don't stop there and continue learning a lot of courses. You should switch to an interpreter -- start to conduct your research, learn new things when you face them. Then try to find a topic and become a Just-In-Time student. 
+
+
+
+
